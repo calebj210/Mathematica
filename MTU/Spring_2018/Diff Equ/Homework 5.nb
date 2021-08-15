@@ -1,0 +1,153 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5333,        145]
+NotebookOptionsPosition[      4816,        128]
+NotebookOutlinePosition[      5157,        143]
+CellTagsIndexPosition[      5114,        140]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "n", ",", "n0", ",", "t", ",", "r", ",", "k", ",", "\[Epsilon]", ",", 
+        "A", ",", "a", ",", "b", ",", "soln"}], "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"a", " ", "=", " ", "0.34"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"b", "=", "0.12"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"r", "=", 
+        RowBox[{"a", "-", "b"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"k", "=", "250"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"\[Epsilon]", "=", "#"}], ";", "\[IndentingNewLine]", 
+       RowBox[{"n0", "=", 
+        RowBox[{"Flatten", "[", 
+         RowBox[{"{", 
+          RowBox[{"10", ",", 
+           RowBox[{"Table", "[", 
+            RowBox[{"t", ",", 
+             RowBox[{"{", 
+              RowBox[{"t", ",", "50", ",", "250", ",", "50"}], "}"}]}], 
+            "]"}]}], "}"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"soln", "=", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"n", "[", "t", "]"}], "/.", 
+           RowBox[{"DSolve", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{"n", "'"}], "[", "t", "]"}], "\[Equal]", 
+                RowBox[{
+                 RowBox[{"-", 
+                  FractionBox[
+                   RowBox[{
+                    RowBox[{"n", "[", "t", "]"}], " ", "r"}], "k"]}], 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"n", "[", "t", "]"}], "-", 
+                   RowBox[{"k", 
+                    RowBox[{"(", 
+                    RowBox[{"1", "-", 
+                    FractionBox["\[Epsilon]", "r"]}], ")"}]}]}], ")"}]}]}], 
+               ",", 
+               RowBox[{
+                RowBox[{"n", "[", "0", "]"}], "\[Equal]", "#"}]}], "}"}], ",", 
+             RowBox[{"n", "[", "t", "]"}], ",", "t"}], "]"}]}], "&"}], "/@", 
+         "n0"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Plot", "[", 
+        RowBox[{"soln", ",", 
+         RowBox[{"{", 
+          RowBox[{"t", ",", "0", ",", "100"}], "}"}], ",", 
+         RowBox[{"PlotRange", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "100"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "250"}], "}"}]}], "}"}]}]}], "]"}]}]}], "]"}], 
+    "&"}], "/@", 
+   RowBox[{"{", 
+    RowBox[{"0.36", ",", "0.25", ",", "0.14"}], "}"}]}], "//", 
+  "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.7288562198063707`*^9, 3.728856387117737*^9}, {
+   3.728856478606864*^9, 3.72885675916726*^9}, {3.728856847637619*^9, 
+   3.728856872357583*^9}, {3.7288569045766068`*^9, 3.728857059938261*^9}, {
+   3.7288570944735203`*^9, 3.7288571892451563`*^9}, {3.728857355955962*^9, 
+   3.728857376230608*^9}, {3.7288574843262873`*^9, 3.7288575742196283`*^9}, 
+   3.728857618890671*^9, {3.728857871091958*^9, 
+   3.728857873445753*^9}},ExpressionUUID->"74ca728e-a835-486e-8663-\
+9aa309f81815"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Throw","sysexc",
+   "\"Uncaught SystemException returned to top level. Can be caught with \
+Catch[\[Ellipsis], _SystemException].\"",2,1,1,33466159917349254669,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.728857873931052*^9, 
+  3.728857895299036*^9}},ExpressionUUID->"afb286c9-2a9a-4ec9-acea-\
+9cb6dbe58c39"],
+
+Cell[BoxData[
+ RowBox[{"SystemException", "[", "\<\"MemoryAllocationFailure\"\>", 
+  "]"}]], "Output",
+ CellChangeTimes->{
+  3.7288567603775177`*^9, {3.7288568489169397`*^9, 3.7288568734089108`*^9}, {
+   3.7288569162508297`*^9, 3.7288569367123528`*^9}, {3.7288569687681847`*^9, 
+   3.728856998161976*^9}, {3.728857045821972*^9, 3.728857061128521*^9}, 
+   3.728857132594397*^9, 3.728857191749056*^9, {3.728857370748908*^9, 
+   3.728857382311995*^9}, 3.728857487069335*^9, 3.728857523108087*^9, {
+   3.728857561311726*^9, 3.728857575390032*^9}, 3.72885761940725*^9, {
+   3.728857873937825*^9, 
+   3.728857895305973*^9}},ExpressionUUID->"e5f079c1-0fab-4b47-812b-\
+2eefd5a4a412"]
+}, Open  ]]
+},
+WindowSize->{1878, 1016},
+WindowMargins->{{21, Automatic}, {21, Automatic}},
+FrontEndVersion->"11.2 for Linux x86 (64-bit) (September 10, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 3171, 79, 271, "Input",ExpressionUUID->"74ca728e-a835-486e-8663-9aa309f81815"],
+Cell[3754, 103, 368, 8, 22, "Message",ExpressionUUID->"afb286c9-2a9a-4ec9-acea-9cb6dbe58c39"],
+Cell[4125, 113, 675, 12, 35, "Output",ExpressionUUID->"e5f079c1-0fab-4b47-812b-2eefd5a4a412"]
+}, Open  ]]
+}
+]
+*)
+

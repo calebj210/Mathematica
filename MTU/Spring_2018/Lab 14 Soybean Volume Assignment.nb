@@ -1,0 +1,1134 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     44031,       1126]
+NotebookOptionsPosition[     38781,       1031]
+NotebookOutlinePosition[     39314,       1050]
+CellTagsIndexPosition[     39271,       1047]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["Lab 14: Soybean Volume Assignment",
+ FontSize->36]], "Title",
+ CellChangeTimes->{{3.535671453871249*^9, 3.535671459822189*^9}, {
+   3.5371233329012933`*^9, 3.5371233386838713`*^9}, {3.538758037878188*^9, 
+   3.538758041440688*^9}, {3.538758995643813*^9, 3.538759000284438*^9}, {
+   3.538759812831313*^9, 3.538759818065688*^9}, {3.5390040962612963`*^9, 
+   3.5390041005425463`*^9}, 3.540121742143976*^9, {3.5405730182909517`*^9, 
+   3.5405730227597017`*^9}, {3.541858742267908*^9, 3.541858743314783*^9}, {
+   3.544536698025687*^9, 3.544536698510062*^9}, {3.569122273589918*^9, 
+   3.569122274371418*^9}, {3.5697119879074907`*^9, 3.569711995358418*^9}, {
+   3.571739462383244*^9, 3.571739462894658*^9}, {3.614456770815737*^9, 
+   3.614456775616775*^9}, {3.6985723895054398`*^9, 3.698572390695284*^9}, {
+   3.6985822878466673`*^9, 3.6985823042048187`*^9}, {3.698586914719574*^9, 
+   3.698586915539597*^9}},
+ FontFamily->"Arial",
+ FontColor->GrayLevel[0],
+ Background->RGBColor[0.94, 0.88, 0.94]],
+
+Cell[CellGroupData[{
+
+Cell["Instructions", "Subsection",
+ CellChangeTimes->{{3.550796194700569*^9, 3.550796196447772*^9}}],
+
+Cell[TextData[{
+ "Welcome to the assignment for the Soybean Volume Lab. The purpose of this \
+assignment is to find the volume of the soybeans in the silo described in the \
+Lab 14 Soybean Volume introduction notebook:\n1. Save the notebook to your \
+computer right away, and save your work often. \n2. When you have finished \
+all the exercises, close any unnecessary cells and save as a PDF. (Make sure \
+you ",
+ StyleBox["Rasterize",
+  FontWeight->"Bold"],
+ " all 3-dimensional plots)\n3. Upload the PDF on Canvas.\n4. ",
+ StyleBox["Do not delete this notebook.",
+  FontWeight->"Bold"],
+ " Save all your work until after the semester is over and your final grade \
+has been issued. "
+}], "Text",
+ CellChangeTimes->{{3.535672447614476*^9, 3.535672525663112*^9}, {
+   3.535677495204578*^9, 3.535677497423339*^9}, {3.535838317870909*^9, 
+   3.535838342096974*^9}, {3.535839265531863*^9, 3.53583929060665*^9}, {
+   3.545238313765032*^9, 3.545238348155192*^9}, {3.545330469433641*^9, 
+   3.545330471607865*^9}, {3.5500602474372234`*^9, 3.5500604364530344`*^9}, {
+   3.5500604710020103`*^9, 3.5500605472753735`*^9}, {3.550060579202199*^9, 
+   3.550060618362439*^9}, {3.550098643397977*^9, 3.550098738292944*^9}, 
+   3.5500993298459826`*^9, {3.5501011737092214`*^9, 3.5501012623485775`*^9}, {
+   3.5501012931898313`*^9, 3.5501013873359966`*^9}, {3.550772853631343*^9, 
+   3.5507728635061607`*^9}, {3.5507962957015467`*^9, 
+   3.5507964349941916`*^9}, {3.551792824196847*^9, 3.5517928946153708`*^9}, {
+   3.5566711260800576`*^9, 3.556671129025226*^9}, 3.584807633853981*^9, {
+   3.631453626932254*^9, 3.6314536379168825`*^9}, {3.632046532111792*^9, 
+   3.6320465512062254`*^9}, {3.6332950350738077`*^9, 3.633295077334282*^9}, {
+   3.633313450072541*^9, 3.633313474642584*^9}, {3.6652789524249754`*^9, 
+   3.6652789599439707`*^9}, 3.695253649385292*^9, {3.6985723955530653`*^9, 
+   3.698572469992963*^9}, {3.698582328687667*^9, 3.698582351461014*^9}, {
+   3.698586918532612*^9, 3.698586932724066*^9}, {3.717622381377219*^9, 
+   3.717622381579069*^9}},ExpressionUUID->"ec489318-ba9a-404c-bed1-\
+ad4ffadcd208"],
+
+Cell[TextData[{
+ StyleBox["Due Date:\n",
+  FontWeight->"Bold"],
+ "see Canvas"
+}], "Text",
+ CellChangeTimes->{{3.535672447614476*^9, 3.535672525663112*^9}, {
+   3.535677495204578*^9, 3.535677497423339*^9}, {3.535838317870909*^9, 
+   3.535838342096974*^9}, {3.535839265531863*^9, 3.53583929060665*^9}, {
+   3.5372239945623407`*^9, 3.537224012712366*^9}, {3.538084265535926*^9, 
+   3.5380843849696407`*^9}, {3.5380875448076057`*^9, 
+   3.5380876187344418`*^9}, {3.538758048081313*^9, 3.538758108737563*^9}, {
+   3.538758841956313*^9, 3.538758938534438*^9}, {3.538759920206313*^9, 
+   3.538759936971938*^9}, {3.538760059393813*^9, 3.538760098112563*^9}, {
+   3.538764619925063*^9, 3.538764634393813*^9}, {3.538922004470161*^9, 
+   3.538922021563364*^9}, 3.5389246000041466`*^9, {3.5390041089019213`*^9, 
+   3.5390041736206713`*^9}, {3.5390104345269213`*^9, 3.5390104658862963`*^9}, 
+   3.5390110150269213`*^9, {3.5390119656050463`*^9, 3.539012049635982*^9}, {
+   3.5390979671434464`*^9, 3.5390979695496964`*^9}, {3.5393627903259816`*^9, 
+   3.5393628130447316`*^9}, {3.540120166456476*^9, 3.5401201852221017`*^9}, {
+   3.5401202530033517`*^9, 3.5401202538471017`*^9}, {3.540120413768976*^9, 
+   3.5401204662533517`*^9}, {3.5401206526283517`*^9, 
+   3.5401206529408517`*^9}, {3.5401215935658517`*^9, 3.540121600456476*^9}, {
+   3.5401217635033517`*^9, 3.5401217812533517`*^9}, {3.540121868831476*^9, 
+   3.540121883425226*^9}, {3.540125221456476*^9, 3.540125221518976*^9}, {
+   3.5401261117846017`*^9, 3.5401261162533517`*^9}, {3.5405731381347017`*^9, 
+   3.5405731445253267`*^9}, {3.541858836002283*^9, 3.541858854377283*^9}, 
+   3.5418627510784464`*^9, {3.5419316490568385`*^9, 3.5419316606193385`*^9}, 
+   3.5419317463068385`*^9, 3.541931885072463*^9, {3.5455680613210783`*^9, 
+   3.5455680771960783`*^9}, {3.548158597783372*^9, 3.5481586252512426`*^9}, {
+   3.569712001015972*^9, 3.569712026758644*^9}, {3.633288260784031*^9, 
+   3.6332882723592515`*^9}, {3.6332883282541494`*^9, 3.633288343214576*^9}, {
+   3.633288396176669*^9, 3.633288479824016*^9}, {3.6332885313197064`*^9, 
+   3.6332885628317614`*^9}, {3.633290338123742*^9, 3.6332903521949673`*^9}, {
+   3.633295103089927*^9, 3.63329510463433*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Volume in the second quadrant", "Subsection",
+ CellChangeTimes->{{3.698022784302326*^9, 3.6980227922688704`*^9}, {
+   3.698022946879528*^9, 3.6980229479436207`*^9}, 3.6980669709862947`*^9}],
+
+Cell[TextData[{
+ "We already defined points ",
+ StyleBox["a",
+  FontWeight->"Bold"],
+ ", ",
+ StyleBox["b",
+  FontWeight->"Bold"],
+ ", and ",
+ StyleBox["c",
+  FontWeight->"Bold"],
+ " as ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    RowBox[{"0", ",", "0", ",", 
+     StyleBox["ha",
+      FontWeight->"Bold"]}], ")"}], TraditionalForm]]],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    RowBox[{"10", ",", "0", ",", 
+     StyleBox["hb",
+      FontWeight->"Bold"]}], ")"}], TraditionalForm]]],
+ ", and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    RowBox[{"0", ",", "10", ",", 
+     StyleBox["hc",
+      FontWeight->"Bold"]}], ")"}], TraditionalForm]]],
+ ", respectively in the introduction notebook.  We now define points ",
+ StyleBox["d",
+  FontWeight->"Bold"],
+ " and ",
+ StyleBox["e",
+  FontWeight->"Bold"],
+ " similarly below (go ahead and evaluate this cell):"
+}], "Text",
+ CellChangeTimes->{{3.615568925457892*^9, 3.6155689887211*^9}, {
+   3.615569023703281*^9, 3.6155690681613083`*^9}, {3.615569125425642*^9, 
+   3.615569161345208*^9}, {3.6155699824495993`*^9, 3.615569982817053*^9}, 
+   3.697372859537772*^9, {3.698572926751458*^9, 3.698572932935164*^9}, {
+   3.69857296837007*^9, 3.6985729733299713`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "ha"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "=", 
+   RowBox[{"{", 
+    RowBox[{"10", ",", "0", ",", "hb"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "10", ",", "hc"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"d", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "10"}], ",", "0", ",", "hd"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"e", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "10"}], ",", "he"}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.615569167946315*^9, 3.6155691897389917`*^9}, {
+  3.6985724827854233`*^9, 3.69857249894529*^9}, {3.698572944645248*^9, 
+  3.6985729553655243`*^9}},ExpressionUUID->"04e5bfcb-ad02-4cca-b646-\
+06842e2cfdb2"],
+
+Cell[TextData[{
+ "\n",
+ StyleBox["Question 1",
+  FontWeight->"Bold"],
+ ": Follow the procedure outlined in the Soybean Lab notebook to find the \
+equation of the plane above the second quadrant (passing through points ",
+ StyleBox["a",
+  FontWeight->"Bold"],
+ ", ",
+ StyleBox["c",
+  FontWeight->"Bold"],
+ " and ",
+ StyleBox["d",
+  FontWeight->"Bold"],
+ ").  Give the equation in rectangular coordinates and write your answer in \
+an input cell in the form \[OpenCurlyDoubleQuote]",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"z", "=", " ", 
+    RowBox[{".", " ", ".", " ", ".", " ", "\"\<\>"}]}], TraditionalForm]]]
+}], "Text",
+ CellChangeTimes->{{3.615569206123394*^9, 3.615569377961339*^9}, {
+   3.615569414577693*^9, 3.615569458849423*^9}, {3.615569496348977*^9, 
+   3.6155695287137337`*^9}, {3.615569564058114*^9, 3.615569584298071*^9}, {
+   3.615569779401314*^9, 3.615569795489303*^9}, 3.615569989697554*^9, {
+   3.6973719117578793`*^9, 3.697371914732749*^9}, {3.697372323374815*^9, 
+   3.697372398898848*^9}, {3.697550132144272*^9, 3.697550142703862*^9}, {
+   3.6975516225755997`*^9, 3.697551631415605*^9}, {3.69755252230553*^9, 
+   3.6975525347937813`*^9}, {3.698022159835088*^9, 3.698022362153988*^9}, {
+   3.69802243148394*^9, 3.6980224578757257`*^9}, {3.6980647462039337`*^9, 
+   3.698064746567491*^9}, {3.6985725397722588`*^9, 3.69857254683314*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"z2", "[", 
+   RowBox[{"x_", ",", "y_"}], "]"}], "=", 
+  RowBox[{"z", "/.", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"c", "-", "a"}], ")"}], "\[Cross]", 
+          RowBox[{"(", 
+           RowBox[{"d", "-", "a"}], ")"}]}], ")"}], ".", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"x", ",", "y", ",", "z"}], "}"}], "-", "a"}], ")"}]}], 
+       "\[Equal]", "0"}], ",", "z"}], "]"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.698595544290956*^9, 3.6985955451240005`*^9}, {
+  3.729449887709289*^9, 3.729449935430099*^9}, {3.729449971330666*^9, 
+  3.729450010601974*^9}, {3.729450050081944*^9, 3.729450121698101*^9}, {
+  3.729450152085134*^9, 3.7294501583684597`*^9}, {3.729450200989303*^9, 
+  3.7294502050931053`*^9}, {3.729450326659548*^9, 
+  3.729450339874261*^9}},ExpressionUUID->"02c2bad3-fd14-48c9-8f1a-\
+930512b7c9b9"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", "10"], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"10", " ", "ha"}], "+", 
+    RowBox[{"ha", " ", "x"}], "-", 
+    RowBox[{"hd", " ", "x"}], "-", 
+    RowBox[{"ha", " ", "y"}], "+", 
+    RowBox[{"hc", " ", "y"}]}], ")"}]}]], "Output",
+ CellChangeTimes->{
+  3.729450012227455*^9, 3.729450053022094*^9, {3.729450088661048*^9, 
+   3.729450129844233*^9}, 3.729450205613796*^9, {3.7294503272736073`*^9, 
+   3.729450340692933*^9}},ExpressionUUID->"bc3730bb-74a7-4d63-a235-\
+3790b8e8b52b"]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["Question 2",
+  FontWeight->"Bold"],
+ ": Convert the equation of the plane into cylindrical coordinates and define \
+the function ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"p2", "(", 
+    RowBox[{"r", ",", "\[Theta]"}], ")"}], TraditionalForm]]],
+ " to be the equation of this plane."
+}], "Text",
+ CellChangeTimes->{{3.69802236883118*^9, 3.698022437146027*^9}, {
+  3.698022504435156*^9, 3.698022523939364*^9}, {3.698064772491941*^9, 
+  3.698064780888475*^9}, {3.698574696316298*^9, 3.698574711128035*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"p2", "[", 
+   RowBox[{"r_", ",", "\[Theta]_"}], "]"}], "=", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"z2", "[", 
+      RowBox[{"x", ",", "y"}], "]"}], "/.", 
+     RowBox[{"x", "\[Rule]", 
+      RowBox[{"r", " ", 
+       RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}]}], "/.", 
+    RowBox[{"y", "\[Rule]", 
+     RowBox[{"r", " ", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}]}]}]}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.6985955480265064`*^9, 3.6985955495806236`*^9}, {
+  3.729450091819903*^9, 3.7294500945989027`*^9}, {3.7294501844065533`*^9, 
+  3.729450185556108*^9}, {3.7294502656797543`*^9, 3.729450278865075*^9}, {
+  3.729450308991459*^9, 3.729450314631155*^9}, {3.7294503539766912`*^9, 
+  3.72945041720053*^9}},ExpressionUUID->"5012ab87-3df9-4794-ba1c-\
+7d0bc65c91c6"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", "10"], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"10", " ", "ha"}], "+", 
+    RowBox[{"ha", " ", "r", " ", 
+     RowBox[{"Cos", "[", "\[Theta]", "]"}]}], "-", 
+    RowBox[{"hd", " ", "r", " ", 
+     RowBox[{"Cos", "[", "\[Theta]", "]"}]}], "-", 
+    RowBox[{"ha", " ", "r", " ", 
+     RowBox[{"Sin", "[", "\[Theta]", "]"}]}], "+", 
+    RowBox[{"hc", " ", "r", " ", 
+     RowBox[{"Sin", "[", "\[Theta]", "]"}]}]}], ")"}]}]], "Output",
+ CellChangeTimes->{{3.729450356601001*^9, 3.729450359985229*^9}, 
+   3.729450418330082*^9},ExpressionUUID->"a9897650-6ae9-40f7-b9a7-\
+8351d787c027"]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["Question 3",
+  FontWeight->"Bold"],
+ ": To find the volume of beans in the second quadrant we will again use a \
+double integral in cylindrical coordinates.  Write down the upper and lower \
+limits of integration for the variable \[Theta] in the integral:\n\t\n\tLower \
+limit:   \[Theta] = ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["\[Pi]", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "4bb18dcf-2f84-422a-b7a1-8edac8ce2100"],
+ "\n\tUpper limit:   \[Theta] = \[Pi]"
+}], "Text",
+ CellChangeTimes->{{3.698022473235223*^9, 3.6980224764110126`*^9}, {
+  3.698022571335634*^9, 3.6980226138536*^9}, {3.698022649001582*^9, 
+  3.6980226741858664`*^9}, {3.698023322330228*^9, 3.698023326082301*^9}, {
+  3.698023722033003*^9, 3.698023849874013*^9}, {3.698064820931115*^9, 
+  3.6980648397751923`*^9}, {3.729450532790024*^9, 
+  3.7294505479318237`*^9}},ExpressionUUID->"bc822d8f-8ef9-43d4-827c-\
+dae00e6044f3"],
+
+Cell[TextData[{
+ StyleBox["Question 4",
+  FontWeight->"Bold"],
+ ": In the cell below, write the double integral that gives the volume of \
+soybeans in the second quadrant."
+}], "Text",
+ CellChangeTimes->{{3.698022683217443*^9, 3.698022737233396*^9}, {
+  3.698022819556861*^9, 3.6980229157834*^9}, {3.6980233632903357`*^9, 
+  3.698023377050169*^9}, {3.698023871235928*^9, 3.698023871539899*^9}, {
+  3.698024500202079*^9, 3.6980245038421288`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"q2", "=", 
+  RowBox[{
+   SubsuperscriptBox["\[Integral]", 
+    FractionBox["\[Pi]", "2"], "\[Pi]"], 
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", "0", "10"], 
+    RowBox[{
+     RowBox[{"p2", "[", 
+      RowBox[{"r", ",", "\[Theta]"}], "]"}], "r", 
+     RowBox[{"\[DifferentialD]", "r"}], 
+     RowBox[{"\[DifferentialD]", "\[Theta]"}]}]}]}]}]], "Input",
+ CellChangeTimes->{{3.6980245099470253`*^9, 3.69802451073024*^9}, {
+  3.729450561711542*^9, 3.729450562512857*^9}, {3.7294505966631813`*^9, 
+  3.729450635160829*^9}, {3.729451031385933*^9, 
+  3.729451032544837*^9}},ExpressionUUID->"1a418d69-7e59-4bad-a47f-\
+fd91d87e24fe"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["25", "3"], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"4", " ", 
+     RowBox[{"(", 
+      RowBox[{"hc", "+", "hd"}], ")"}]}], "+", 
+    RowBox[{"ha", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "8"}], "+", 
+       RowBox[{"3", " ", "\[Pi]"}]}], ")"}]}]}], ")"}]}]], "Output",
+ CellChangeTimes->{3.729450636765828*^9, 
+  3.729451034360429*^9},ExpressionUUID->"eb25160a-6658-46be-b58d-\
+4aaed4bd5d8d"]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["Question 5",
+  FontWeight->"Bold"],
+ ": What you calculated in question 4 is the volume of the soybeans in the \
+second quadrant in terms of the heights ",
+ StyleBox["ha",
+  FontWeight->"Bold"],
+ ", ",
+ StyleBox["hc",
+  FontWeight->"Bold"],
+ " and ",
+ StyleBox["hd",
+  FontWeight->"Bold"],
+ ".  Plug in sample values of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    StyleBox["ha",
+     FontWeight->"Bold"], 
+    StyleBox["=",
+     FontWeight->"Plain"], 
+    RowBox[{
+     StyleBox["hc",
+      FontWeight->"Bold"], "=", 
+     RowBox[{
+      StyleBox["hd",
+       FontWeight->"Bold"], 
+      StyleBox["=",
+       FontWeight->"Plain"], 
+      StyleBox[
+       StyleBox[
+        RowBox[{"3", "0"}]],
+       FontWeight->"Plain"]}]}]}], TraditionalForm]],ExpressionUUID->
+  "2b6967c5-371a-4b22-898d-91b7fb726d91"],
+ " into this volume expression.  The shape corresponding to these values is a \
+quarter of a cylinder with radius 10 and height 30.  Does your answer for the \
+volume correspond to the correct value of 750\[Pi] ?  (If not, you should \
+carefully work through questions 1-4 to see what went wrong.)"
+}], "Text",
+ CellChangeTimes->{{3.698022977241352*^9, 3.6980229869212227`*^9}, {
+  3.698023027189062*^9, 3.698023175548581*^9}, {3.698023205818123*^9, 
+  3.698023238266231*^9}, {3.698023896877715*^9, 3.698023928180694*^9}, {
+  3.6980648662787237`*^9, 3.698064866526334*^9}, {3.698068205622388*^9, 
+  3.69806820793435*^9}, {3.698574794303385*^9, 3.698574798059181*^9}, {
+  3.698574889606564*^9, 3.698574993034227*^9}, {3.6985759199831743`*^9, 
+  3.698575965853862*^9}, {3.7288392561580195`*^9, 
+  3.728839261388667*^9}},ExpressionUUID->"ffb72928-5f04-420b-b01b-\
+f23efa570d16"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       FractionBox["25", "3"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"4", " ", 
+          RowBox[{"(", 
+           RowBox[{"hc", "+", "hd"}], ")"}]}], "+", 
+         RowBox[{"ha", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "8"}], "+", 
+            RowBox[{"3", " ", "\[Pi]"}]}], ")"}]}]}], ")"}]}], "/.", 
+      RowBox[{"ha", "\[Rule]", "30"}]}], "/.", 
+     RowBox[{"hc", "\[Rule]", "30"}]}], "/.", 
+    RowBox[{"hd", "\[Rule]", "30"}]}], ")"}], "//", "Simplify"}]], "Input",
+ CellChangeTimes->{{3.6985957294226437`*^9, 3.698595730123478*^9}, {
+  3.729450667962247*^9, 3.729450698112755*^9}, {3.729450740378454*^9, 
+  3.729450790276272*^9}},ExpressionUUID->"5ffdc3c4-0a6c-4279-b040-\
+b7662ac0dd91"],
+
+Cell[BoxData[
+ RowBox[{"750", " ", "\[Pi]"}]], "Output",
+ CellChangeTimes->{
+  3.729450698596424*^9, {3.729450753579384*^9, 
+   3.729450770082878*^9}},ExpressionUUID->"70327f99-2321-452e-b3d5-\
+da0f4c98d450"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Volume in quadrants 3 and 4", "Subsection",
+ CellChangeTimes->{{3.698022799341127*^9, 3.6980228053889313`*^9}, {
+   3.698022950151514*^9, 3.6980229506394787`*^9}, 3.698066974207905*^9}],
+
+Cell[TextData[{
+ StyleBox["Question 6",
+  FontWeight->"Bold"],
+ ": Following the same steps as in the previous section, write the expression \
+(in terms of ",
+ StyleBox["ha",
+  FontWeight->"Bold"],
+ ", ",
+ StyleBox["hd",
+  FontWeight->"Bold"],
+ " and ",
+ StyleBox["he",
+  FontWeight->"Bold"],
+ ") that gives the volume of the beans in the third quadrant."
+}], "Text",
+ CellChangeTimes->{{3.698022811556209*^9, 3.698022817364938*^9}, {
+  3.698022954518855*^9, 3.698022955943542*^9}, {3.6980232467698936`*^9, 
+  3.698023382649953*^9}, {3.69806666203166*^9, 3.698066664533815*^9}, {
+  3.698589656262808*^9, 3.6985896572776957`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"z3", "[", 
+    RowBox[{"x_", ",", "y_"}], "]"}], "=", 
+   RowBox[{"z", "/.", 
+    RowBox[{"Flatten", "[", 
+     RowBox[{"Solve", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"d", "-", "a"}], ")"}], "\[Cross]", 
+           RowBox[{"(", 
+            RowBox[{"e", "-", "a"}], ")"}]}], ")"}], ".", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"x", ",", "y", ",", "z"}], "}"}], "-", "a"}], ")"}]}], 
+        "\[Equal]", "0"}], ",", "z"}], "]"}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p3", "[", 
+    RowBox[{"r_", ",", "\[Theta]_"}], "]"}], "=", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"z3", "[", 
+       RowBox[{"x", ",", "y"}], "]"}], "/.", 
+      RowBox[{"x", "\[Rule]", 
+       RowBox[{"r", " ", 
+        RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}]}], "/.", 
+     RowBox[{"y", "\[Rule]", 
+      RowBox[{"r", " ", 
+       RowBox[{"Sin", "[", "\[Theta]", "]"}]}]}]}], ")"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"q3", "=", 
+  RowBox[{
+   SubsuperscriptBox["\[Integral]", "\[Pi]", 
+    FractionBox[
+     RowBox[{"3", "\[Pi]"}], "2"]], 
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", "0", "10"], 
+    RowBox[{
+     RowBox[{"p3", "[", 
+      RowBox[{"r", ",", "\[Theta]"}], "]"}], "r", 
+     RowBox[{"\[DifferentialD]", "r"}], 
+     RowBox[{"\[DifferentialD]", "\[Theta]"}]}]}]}]}]}], "Input",
+ CellChangeTimes->{{3.6985955873797903`*^9, 3.6985955876954565`*^9}, {
+  3.7294508519532843`*^9, 3.7294509499261627`*^9}, {3.729451043189433*^9, 
+  3.7294510442592154`*^9}},ExpressionUUID->"f3cf657e-a091-4741-86cc-\
+546e98969e84"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["25", "3"], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"4", " ", 
+     RowBox[{"(", 
+      RowBox[{"hd", "+", "he"}], ")"}]}], "+", 
+    RowBox[{"ha", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "8"}], "+", 
+       RowBox[{"3", " ", "\[Pi]"}]}], ")"}]}]}], ")"}]}]], "Output",
+ CellChangeTimes->{{3.729450924351218*^9, 3.729450951430229*^9}, 
+   3.729451044830872*^9},ExpressionUUID->"aa311412-3908-4628-afaa-\
+ad09efd80bee"]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["Question 7",
+  FontWeight->"Bold"],
+ ": Write the expression (in terms of ",
+ StyleBox["ha",
+  FontWeight->"Bold"],
+ ", ",
+ StyleBox["hb",
+  FontWeight->"Bold"],
+ " and ",
+ StyleBox["he",
+  FontWeight->"Bold"],
+ ") that gives the volume of the soybeans in the fourth quadrant."
+}], "Text",
+ CellChangeTimes->{{3.698023385852253*^9, 3.698023388340276*^9}, {
+   3.6980239495741158`*^9, 3.698023956470087*^9}, {3.698066666901679*^9, 
+   3.698066667222118*^9}, 3.698589648913643*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"z4", "[", 
+    RowBox[{"x_", ",", "y_"}], "]"}], "=", 
+   RowBox[{"z", "/.", 
+    RowBox[{"Flatten", "[", 
+     RowBox[{"Solve", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"e", "-", "a"}], ")"}], "\[Cross]", 
+           RowBox[{"(", 
+            RowBox[{"b", "-", "a"}], ")"}]}], ")"}], ".", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"x", ",", "y", ",", "z"}], "}"}], "-", "a"}], ")"}]}], 
+        "\[Equal]", "0"}], ",", "z"}], "]"}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"p4", "[", 
+    RowBox[{"r_", ",", "\[Theta]_"}], "]"}], "=", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"z4", "[", 
+       RowBox[{"x", ",", "y"}], "]"}], "/.", 
+      RowBox[{"x", "\[Rule]", 
+       RowBox[{"r", " ", 
+        RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}]}], "/.", 
+     RowBox[{"y", "\[Rule]", 
+      RowBox[{"r", " ", 
+       RowBox[{"Sin", "[", "\[Theta]", "]"}]}]}]}], ")"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"q4", "=", 
+  RowBox[{
+   SubsuperscriptBox["\[Integral]", 
+    FractionBox[
+     RowBox[{"3", "\[Pi]"}], "2"], 
+    RowBox[{"2", "\[Pi]"}]], 
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", "0", "10"], 
+    RowBox[{
+     RowBox[{"p4", "[", 
+      RowBox[{"r", ",", "\[Theta]"}], "]"}], "r", 
+     RowBox[{"\[DifferentialD]", "r"}], 
+     RowBox[{"\[DifferentialD]", "\[Theta]"}]}]}]}]}]}], "Input",
+ CellChangeTimes->{{3.6985955904545937`*^9, 3.698595590986624*^9}, {
+  3.7294509645692244`*^9, 3.7294510015393744`*^9}, {3.729451047080246*^9, 
+  3.7294510482120457`*^9}},ExpressionUUID->"ebe3b031-7119-451e-9955-\
+698c6f22d16f"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["25", "3"], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"4", " ", 
+     RowBox[{"(", 
+      RowBox[{"hb", "+", "he"}], ")"}]}], "+", 
+    RowBox[{"ha", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "8"}], "+", 
+       RowBox[{"3", " ", "\[Pi]"}]}], ")"}]}]}], ")"}]}]], "Output",
+ CellChangeTimes->{{3.729450998211096*^9, 3.729451002358602*^9}, 
+   3.729451048671382*^9},ExpressionUUID->"a55add55-c2bb-4ce8-8050-\
+e1205e661fd5"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Putting it all together", "Subsection",
+ CellChangeTimes->{{3.61556996335324*^9, 3.6155699751851683`*^9}, {
+  3.615570263153055*^9, 3.61557027256117*^9}, {3.698024078240507*^9, 
+  3.6980240827271852`*^9}, {3.698066977287559*^9, 3.6980669776158037`*^9}}],
+
+Cell[TextData[{
+ StyleBox["Question 8",
+  FontWeight->"Bold"],
+ ": Define a function in the input cell below called ",
+ StyleBox["totalVolume",
+  FontWeight->"Bold"],
+ " that takes the list {",
+ StyleBox["ha",
+  FontWeight->"Bold"],
+ ", ",
+ StyleBox["hb",
+  FontWeight->"Bold"],
+ ", ",
+ StyleBox["hc",
+  FontWeight->"Bold"],
+ ", ",
+ StyleBox["hd,",
+  FontWeight->"Bold"],
+ " ",
+ StyleBox["he",
+  FontWeight->"Bold"],
+ "} as input and returns the sum of the volume formulas from all four \
+quadrants (Note: It is important that you define ",
+ StyleBox["totalVolume",
+  FontWeight->"Bold"],
+ " so that it takes a ",
+ StyleBox["list",
+  FontSlant->"Italic"],
+ " of five elements as input.)  The volume from the first quadrant can be \
+copied from the Soybean Lab introduction notebook."
+}], "Text",
+ CellChangeTimes->{{3.615570005107849*^9, 3.615570094897081*^9}, {
+  3.6155763140034647`*^9, 3.615576316433764*^9}, {3.6155793741139507`*^9, 
+  3.615579453857807*^9}, {3.615580195457293*^9, 3.615580207402018*^9}, {
+  3.6973724815618896`*^9, 3.6973725048973846`*^9}, {3.698023441901266*^9, 
+  3.698023451493279*^9}, {3.698023962198963*^9, 3.698023996013156*^9}, {
+  3.69857259608951*^9, 3.6985726397933197`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"q1", "=", 
+   RowBox[{
+    FractionBox["25", "3"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"4", " ", 
+       RowBox[{"(", 
+        RowBox[{"hb", "+", "hc"}], ")"}]}], "+", 
+      RowBox[{"ha", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "8"}], "+", 
+         RowBox[{"3", " ", "\[Pi]"}]}], ")"}]}]}], ")"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"totalVolume", "[", 
+   RowBox[{"ha_", ",", "hb_", ",", "hc_", ",", "hd_", ",", "he_"}], "]"}], 
+  "=", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"q1", "+", "q2", "+", "q3", "+", "q4"}], ")"}], "//", 
+   "Simplify"}]}]}], "Input",
+ CellChangeTimes->{{3.615580209630082*^9, 3.615580209914328*^9}, {
+   3.61558196236438*^9, 3.6155819986313753`*^9}, {3.615631310172316*^9, 
+   3.615631341129394*^9}, 3.69737253903102*^9, {3.729451069925251*^9, 
+   3.729451140927862*^9}},ExpressionUUID->"fae83f5f-cbfd-4b8b-82c4-\
+d57444e48b7d"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["100", "3"], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"2", " ", 
+     RowBox[{"(", 
+      RowBox[{"hb", "+", "hc", "+", "hd", "+", "he"}], ")"}]}], "+", 
+    RowBox[{"ha", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "8"}], "+", 
+       RowBox[{"3", " ", "\[Pi]"}]}], ")"}]}]}], ")"}]}]], "Output",
+ CellChangeTimes->{{3.729451118458393*^9, 3.729451141254527*^9}, 
+   3.729451204274662*^9},ExpressionUUID->"4a59da43-7a07-4006-a437-\
+c8cb651fdd06"]
+}, Open  ]],
+
+Cell[TextData[{
+ "\nThis function takes as input a list of the data measurements from the \
+five measuring devices and gives the total volume of the soybeans in the \
+silo.  Notice that if you use 30 for each of the heights, the shape will be a \
+cylinder with radius 10, height 30, and thus a volume of 3000\[Pi] cubic \
+units. You should check to make sure you get the right answer from your ",
+ StyleBox["totalVolume",
+  FontWeight->"Bold"],
+ " formula using 30 for each height. If your output was not 3000\[Pi], then \
+one or more of the volumes from the second, third or fourth quadrant is \
+incorrect.  Check each one, using height values of 30 for each ",
+ StyleBox["ha",
+  FontWeight->"Bold"],
+ ", ",
+ StyleBox["hb",
+  FontWeight->"Bold"],
+ ",...  The answer for each should be one quarter of 3000\[Pi], or 750\[Pi].  \
+This should help you determine which volume is incorrect."
+}], "Text",
+ CellChangeTimes->{{3.6155701035371933`*^9, 3.6155702078573847`*^9}, {
+   3.615574373809078*^9, 3.615574374225795*^9}, {3.615672888766541*^9, 
+   3.615672904262184*^9}, {3.615673581527685*^9, 3.6156736107098827`*^9}, 
+   3.697201163980235*^9, {3.697372558244648*^9, 3.697372558996623*^9}, 
+   3.697372871429891*^9, {3.697547946022148*^9, 3.6975479788737307`*^9}, {
+   3.697548016660269*^9, 3.697548052121874*^9}, {3.697548219582773*^9, 
+   3.697548298569528*^9}, {3.698023458284892*^9, 3.6980234624368143`*^9}, 
+   3.698024007254222*^9, {3.698067404058268*^9, 3.6980674339474277`*^9}, {
+   3.7288391508002253`*^9, 3.7288392007507353`*^9}, {3.728839233198153*^9, 
+   3.7288392337095313`*^9}},ExpressionUUID->"033f0e7f-7fec-40a8-8965-\
+2471603eea1b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"totalVolume", "[", 
+   RowBox[{"30", ",", "30", ",", "30", ",", "30", ",", "30"}], "]"}], "//", 
+  "Simplify"}]], "Input",
+ CellChangeTimes->{{3.7294512539173183`*^9, 
+  3.729451299587111*^9}},ExpressionUUID->"6c5fa03a-f2e1-4e82-b4b0-\
+ed9cb330114f"],
+
+Cell[BoxData[
+ RowBox[{"3000", " ", "\[Pi]"}]], "Output",
+ CellChangeTimes->{{3.7294512617465754`*^9, 
+  3.729451300060028*^9}},ExpressionUUID->"6ce5b588-4c92-4848-8b2e-\
+f968b45c6f69"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Making it useful", "Subsection",
+ CellChangeTimes->{{3.698024085959382*^9, 3.698024087695253*^9}, {
+  3.698066979743949*^9, 
+  3.698066980151742*^9}},ExpressionUUID->"b1d1ef44-195d-4138-a914-\
+008b323b7948"],
+
+Cell[TextData[{
+ StyleBox["Mathematica ",
+  FontSlant->"Italic"],
+ "has the capability of pulling data from the cloud and then performing \
+whatever calculations you like on that data.  In the case of our soybean \
+silo, let\[CloseCurlyQuote]s suppose that the five measuring devices are \
+pushing data readings to a website where we can access them and calculate the \
+volume of soybeans in real time.  \n\nWe will use the command ",
+ StyleBox["Import t",
+  FontWeight->"Bold"],
+ "o access information from the cloud.  Look up the documentation to see how \
+it works. "
+}], "Text",
+ CellChangeTimes->{{3.698024103714612*^9, 3.698024188626047*^9}, {
+   3.698024548328829*^9, 3.6980246216593733`*^9}, {3.698024790323844*^9, 
+   3.6980248198764963`*^9}, {3.698027012871236*^9, 3.698027100712145*^9}, {
+   3.698027209040534*^9, 3.6980272191992483`*^9}, {3.698027530096283*^9, 
+   3.698027693959648*^9}, {3.698027752937522*^9, 3.6980277987812433`*^9}, {
+   3.69802782929554*^9, 3.698027846037229*^9}, {3.6980278865545063`*^9, 
+   3.6980279464160748`*^9}, {3.698028017938325*^9, 3.6980280229356422`*^9}, {
+   3.698028059156201*^9, 3.698028065833889*^9}, {3.698028104535501*^9, 
+   3.6980284806929073`*^9}, {3.698031531237372*^9, 3.6980315565627127`*^9}, {
+   3.698031714622449*^9, 3.698031716449123*^9}, {3.698065284869895*^9, 
+   3.698065285223867*^9}, {3.698066174467824*^9, 3.698066176467474*^9}, {
+   3.6980674809016953`*^9, 3.6980675210651083`*^9}, 3.698069054886643*^9, {
+   3.6984073768881683`*^9, 3.698407403050867*^9}, {3.698411129319663*^9, 
+   3.698411129762989*^9}, {3.6985726516733513`*^9, 3.698572670713091*^9}, {
+   3.698572841950742*^9, 3.6985728755266237`*^9}}],
+
+Cell[TextData[{
+ "\n",
+ StyleBox["Question 9",
+  FontWeight->"Bold"],
+ ":  Data from the five measuring devices is stored at the following URL: \
+http://math.mtu.edu/~jdgreger/index_files/soybean.xlsx.  In the input cell \
+below, use the command ",
+ StyleBox["Import",
+  FontWeight->"Bold"],
+ " to retrieve that data.  The output should be a list containing lists with \
+5 elements.  These correspond to the data readings from the measuring devices "
+}], "Text",
+ CellChangeTimes->{{3.698024103714612*^9, 3.698024188626047*^9}, {
+   3.698024548328829*^9, 3.6980246216593733`*^9}, {3.698024790323844*^9, 
+   3.6980248198764963`*^9}, {3.698027012871236*^9, 3.698027100712145*^9}, {
+   3.698027209040534*^9, 3.6980272191992483`*^9}, {3.698027530096283*^9, 
+   3.698027693959648*^9}, {3.698027752937522*^9, 3.6980277987812433`*^9}, {
+   3.69802782929554*^9, 3.698027846037229*^9}, {3.6980278865545063`*^9, 
+   3.6980279464160748`*^9}, {3.698028017938325*^9, 3.6980280229356422`*^9}, {
+   3.698028059156201*^9, 3.698028065833889*^9}, {3.698028104535501*^9, 
+   3.6980284806929073`*^9}, {3.698031531237372*^9, 3.6980315565627127`*^9}, {
+   3.698031714622449*^9, 3.698031716449123*^9}, {3.698065284869895*^9, 
+   3.698065285223867*^9}, {3.698066174467824*^9, 3.698066176467474*^9}, {
+   3.6980674809016953`*^9, 3.6980675210651083`*^9}, {3.6984073708196297`*^9, 
+   3.698407371113378*^9}, {3.6985726778658524`*^9, 3.698572702089188*^9}, {
+   3.6985727354520473`*^9, 3.6985727726945353`*^9}, 
+   3.698572832377482*^9},ExpressionUUID->"5f52a3ce-5b2c-456f-89e6-\
+5b40fbb346b3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"data", "=", 
+    RowBox[{"Flatten", "[", 
+     RowBox[{
+      RowBox[{"Import", "[", 
+       RowBox[{
+       "\"\<http://math.mtu.edu/~jdgreger/index_files/soybean.xlsx\>\"", ",", 
+        "\"\<Data\>\""}], "]"}], ",", "1"}], "]"}]}], ")"}], "//", 
+  "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.698663663108917*^9, 3.698663663533025*^9}, {
+   3.729451364588525*^9, 3.729451431192622*^9}, 3.729451491265353*^9, {
+   3.7294517053375463`*^9, 3.7294517515633173`*^9}, {3.729452319018813*^9, 
+   3.7294523245742483`*^9}, {3.729452419484324*^9, 3.729452465191277*^9}, {
+   3.729452800641878*^9, 3.729452800892314*^9}, {3.729452843679002*^9, 
+   3.72945286578708*^9}},ExpressionUUID->"0688cd57-dd2a-4f80-b7d5-\
+c7c25d54d677"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"19.564593387855407`", "19.00445918370692`", "19.120939083950873`", 
+      "19.613418642567765`", "18.593638616085077`"},
+     {"18.01350401038381`", "17.315170562067735`", "17.723114533637943`", 
+      "17.36322121303978`", "19.9630826741233`"},
+     {"17.285746351127734`", "19.885279516383903`", "17.66447967842842`", 
+      "19.47860251493382`", "16.49581832465877`"},
+     {"16.919046567214387`", "16.252014513830133`", "17.364899424431716`", 
+      "16.591569200967584`", "19.486991530976287`"},
+     {"16.17496641540918`", "19.23939488727528`", "19.61427287868859`", 
+      "16.25828051178133`", "16.93181903499138`"},
+     {"17.0604867907258`", "19.512241008520313`", "18.492509348390517`", 
+      "16.12217271672629`", "17.77295476919629`"},
+     {"16.167538638093323`", "19.29946581357616`", "18.32576284588675`", 
+      "16.676072233587366`", "16.67180552420719`"}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.729451376534774*^9, 3.729451399269578*^9}, 
+   3.729451434404681*^9, 3.729451491983636*^9, {3.729451711113017*^9, 
+   3.729451752131044*^9}, 3.729452347059702*^9, 3.729452422514978*^9, {
+   3.7294524534731627`*^9, 3.729452465853319*^9}, {3.729452801497122*^9, 
+   3.729452815800692*^9}, {3.7294528469632053`*^9, 3.729452854212175*^9}, 
+   3.7294529172689333`*^9},ExpressionUUID->"762378af-5d9a-4659-81e3-\
+864047121d61"]
+}, Open  ]],
+
+Cell[TextData[{
+ "\n",
+ StyleBox["Question 10:",
+  FontWeight->"Bold"],
+ " Use your volume formula from the previous section to find the volume of \
+the soybeans in the bin at the very first 5-element list from the data you \
+just imported."
+}], "Text",
+ CellChangeTimes->{{3.6980284948958397`*^9, 3.698028506999403*^9}, {
+   3.698028612221395*^9, 3.69802863078714*^9}, {3.69803156384095*^9, 
+   3.698031590249214*^9}, {3.698064946945694*^9, 3.69806495536974*^9}, 
+   3.6980691286819763`*^9, {3.69857277833484*^9, 3.698572809230638*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"totalVolume", "@@", 
+  RowBox[{"data", "[", 
+   RowBox[{"[", "1", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.729452973983591*^9, 
+  3.729452980359133*^9}},ExpressionUUID->"f2e3dcee-a63c-4596-b484-\
+401a9bad6553"],
+
+Cell[BoxData["6018.0037507684`"], "Output",
+ CellChangeTimes->{{3.729452980779235*^9, 
+  3.72945299371453*^9}},ExpressionUUID->"811f31d1-a961-4cab-8969-\
+d27ce2ad9d22"]
+}, Open  ]],
+
+Cell[TextData[StyleBox["Or",
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.729452971657642*^9, 
+  3.72945297192445*^9}},ExpressionUUID->"25ac6fd8-a3f4-4b26-a971-\
+9c7007cdfcdc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"totalVolume", "@@@", "data"}], ")"}], "[", 
+  RowBox[{"[", "1", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.698595627956955*^9, 3.698595628410575*^9}, {
+   3.7294514422769203`*^9, 3.729451446758494*^9}, {3.729451508611885*^9, 
+   3.729451525082651*^9}, {3.729451582089282*^9, 3.729451589982193*^9}, 
+   3.729451691270708*^9, {3.729451775512108*^9, 3.729451906807805*^9}, {
+   3.729452024880248*^9, 3.7294520309576597`*^9}, 3.729452129801806*^9, {
+   3.729452224381044*^9, 3.729452239458848*^9}, {3.7294522702441072`*^9, 
+   3.729452294216897*^9}, {3.72945233143361*^9, 3.729452402244377*^9}, {
+   3.729452474097702*^9, 3.729452480367272*^9}, 3.729452514207182*^9, {
+   3.729452602627782*^9, 3.729452610604163*^9}, {3.7294527010297947`*^9, 
+   3.72945271136482*^9}, {3.72945275122992*^9, 3.729452765645197*^9}, {
+   3.729452823794004*^9, 3.7294528319098063`*^9}, {3.7294529277884827`*^9, 
+   3.729452944981421*^9}},ExpressionUUID->"747e2926-10f4-478d-a554-\
+e87a50161ddc"],
+
+Cell[BoxData["6018.0037507684`"], "Output",
+ CellChangeTimes->{
+  3.729452402997696*^9, 3.7294524811811953`*^9, {3.729452606221427*^9, 
+   3.729452611247642*^9}, 3.7294527117878*^9, {3.7294527523724403`*^9, 
+   3.729452766102522*^9}, {3.729452806333406*^9, 3.729452856604706*^9}, {
+   3.7294529192487717`*^9, 3.729452945478942*^9}, 
+   3.729452995175375*^9},ExpressionUUID->"c2d9e6c8-50a2-40f5-bf4b-\
+858274c69ab2"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1878, 1016},
+WindowMargins->{{21, Automatic}, {21, Automatic}},
+ShowSelection->True,
+Magnification:>FEPrivate`If[
+  FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 1.25, 1.25 Inherited],
+FrontEndVersion->"11.2 for Linux x86 (64-bit) (September 10, 2017)",
+StyleDefinitions->FrontEnd`FileName[{"Creative"}, "PastelColor.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 1016, 16, 112, "Title",ExpressionUUID->"2b8dc1ad-93ac-4872-8d8a-2e1da01ad056"],
+Cell[CellGroupData[{
+Cell[1620, 42, 100, 1, 47, "Subsection",ExpressionUUID->"c8ad86f4-c2a4-4b94-a98e-31e883797419"],
+Cell[1723, 45, 2102, 34, 181, "Text",ExpressionUUID->"ec489318-ba9a-404c-bed1-ad4ffadcd208"],
+Cell[3828, 81, 2203, 33, 70, "Text",ExpressionUUID->"e37ac386-5509-4c9b-8115-70d0ccafd787"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6068, 119, 195, 2, 47, "Subsection",ExpressionUUID->"1427185c-621a-42e1-82d9-bf8e841ee13d"],
+Cell[6266, 123, 1225, 43, 70, "Text",ExpressionUUID->"ab3ae3bb-78db-416a-8668-af6e9bbdbabb"],
+Cell[7494, 168, 922, 29, 172, "Input",ExpressionUUID->"04e5bfcb-ad02-4cca-b646-06842e2cfdb2"],
+Cell[8419, 199, 1354, 30, 98, "Text",ExpressionUUID->"f7d1e736-78ee-4019-b85c-b42208f43381"],
+Cell[CellGroupData[{
+Cell[9798, 233, 1037, 27, 55, "Input",ExpressionUUID->"02c2bad3-fd14-48c9-8f1a-930512b7c9b9"],
+Cell[10838, 262, 528, 14, 74, "Output",ExpressionUUID->"bc3730bb-74a7-4d63-a235-3790b8e8b52b"]
+}, Open  ]],
+Cell[11381, 279, 529, 13, 42, "Text",ExpressionUUID->"a93b7e10-d6e9-4ad6-b977-45f1d0433657"],
+Cell[CellGroupData[{
+Cell[11935, 296, 819, 20, 55, "Input",ExpressionUUID->"5012ab87-3df9-4794-ba1c-7d0bc65c91c6"],
+Cell[12757, 318, 629, 16, 74, "Output",ExpressionUUID->"a9897650-6ae9-40f7-b9a7-8351d787c027"]
+}, Open  ]],
+Cell[13401, 337, 958, 20, 161, "Text",ExpressionUUID->"bc822d8f-8ef9-43d4-827c-dae00e6044f3"],
+Cell[14362, 359, 445, 9, 42, "Text",ExpressionUUID->"0a489360-0cba-4bae-8101-1a79ef9aef5b"],
+Cell[CellGroupData[{
+Cell[14832, 372, 654, 16, 85, "Input",ExpressionUUID->"1a418d69-7e59-4bad-a47f-fd91d87e24fe"],
+Cell[15489, 390, 457, 15, 74, "Output",ExpressionUUID->"eb25160a-6658-46be-b58d-4aaed4bd5d8d"]
+}, Open  ]],
+Cell[15961, 408, 1710, 47, 98, "Text",ExpressionUUID->"ffb72928-5f04-420b-b01b-f23efa570d16"],
+Cell[CellGroupData[{
+Cell[17696, 459, 848, 24, 79, "Input",ExpressionUUID->"5ffdc3c4-0a6c-4279-b040-b7662ac0dd91"],
+Cell[18547, 485, 208, 5, 55, "Output",ExpressionUUID->"70327f99-2321-452e-b3d5-da0f4c98d450"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18804, 496, 191, 2, 47, "Subsection",ExpressionUUID->"7418a92b-780d-4b63-8eaa-237452e21bb7"],
+Cell[18998, 500, 629, 18, 42, "Text",ExpressionUUID->"9e32e99c-bf26-403b-b24c-b34f90c9a385"],
+Cell[CellGroupData[{
+Cell[19652, 522, 1771, 54, 145, "Input",ExpressionUUID->"f3cf657e-a091-4741-86cc-546e98969e84"],
+Cell[21426, 578, 482, 15, 74, "Output",ExpressionUUID->"aa311412-3908-4628-afaa-ad09efd80bee"]
+}, Open  ]],
+Cell[21923, 596, 506, 16, 42, "Text",ExpressionUUID->"50123cf3-bfb3-40da-af16-5e8df69b8728"],
+Cell[CellGroupData[{
+Cell[22454, 616, 1789, 55, 146, "Input",ExpressionUUID->"ebe3b031-7119-451e-9955-698c6f22d16f"],
+Cell[24246, 673, 482, 15, 74, "Output",ExpressionUUID->"a55add55-c2bb-4ce8-8050-e1205e661fd5"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24777, 694, 259, 3, 47, "Subsection",ExpressionUUID->"f4e3ba3d-65fe-405a-9c3c-96e54eb884cd"],
+Cell[25039, 699, 1207, 36, 98, "Text",ExpressionUUID->"ed18d04b-f105-48e9-8f74-739032cdd144"],
+Cell[CellGroupData[{
+Cell[26271, 739, 960, 28, 112, "Input",ExpressionUUID->"fae83f5f-cbfd-4b8b-82c4-d57444e48b7d"],
+Cell[27234, 769, 505, 15, 74, "Output",ExpressionUUID->"4a59da43-7a07-4006-a437-c8cb651fdd06"]
+}, Open  ]],
+Cell[27754, 787, 1647, 29, 181, "Text",ExpressionUUID->"033f0e7f-7fec-40a8-8965-2471603eea1b"],
+Cell[CellGroupData[{
+Cell[29426, 820, 285, 7, 55, "Input",ExpressionUUID->"6c5fa03a-f2e1-4e82-b4b0-ed9cb330114f"],
+Cell[29714, 829, 185, 4, 55, "Output",ExpressionUUID->"6ce5b588-4c92-4848-8b2e-f968b45c6f69"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29948, 839, 213, 4, 47, "Subsection",ExpressionUUID->"b1d1ef44-195d-4138-a914-008b323b7948"],
+Cell[30164, 845, 1673, 27, 126, "Text",ExpressionUUID->"720f1eb6-b588-43b4-b3fa-d08c839920b3"],
+Cell[31840, 874, 1566, 27, 98, "Text",ExpressionUUID->"5f52a3ce-5b2c-456f-89e6-5b40fbb346b3"],
+Cell[CellGroupData[{
+Cell[33431, 905, 774, 17, 55, "Input",ExpressionUUID->"0688cd57-dd2a-4f80-b7d5-c7c25d54d677"],
+Cell[34208, 924, 1877, 36, 213, "Output",ExpressionUUID->"762378af-5d9a-4659-81e3-864047121d61"]
+}, Open  ]],
+Cell[36100, 963, 537, 11, 98, "Text",ExpressionUUID->"b46c6d09-e9a0-4e89-96ea-f433c0bf5536"],
+Cell[CellGroupData[{
+Cell[36662, 978, 241, 6, 55, "Input",ExpressionUUID->"f2e3dcee-a63c-4596-b484-401a9bad6553"],
+Cell[36906, 986, 168, 3, 73, "Output",ExpressionUUID->"811f31d1-a961-4cab-8969-d27ce2ad9d22"]
+}, Open  ]],
+Cell[37089, 992, 184, 4, 42, "Text",ExpressionUUID->"25ac6fd8-a3f4-4b26-a971-9c7007cdfcdc"],
+Cell[CellGroupData[{
+Cell[37298, 1000, 1025, 17, 55, "Input",ExpressionUUID->"747e2926-10f4-478d-a554-e87a50161ddc"],
+Cell[38326, 1019, 415, 7, 106, "Output",ExpressionUUID->"c2d9e6c8-50a2-40f5-bf4b-858274c69ab2"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,220 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7824,        210]
+NotebookOptionsPosition[      7008,        187]
+NotebookOutlinePosition[      7551,        207]
+CellTagsIndexPosition[      7508,        204]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"x_", ",", "y_", ",", "z_"}], "]"}], "=", 
+   RowBox[{"x", " ", "y", " ", "z"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"soln", "=", 
+     RowBox[{"Solve", "[", 
+      RowBox[{
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"y", " ", "z"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"2", "\[Lambda]", " ", "x"}], "+", "\[Gamma]"}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"x", " ", "z"}], "\[Equal]", 
+          RowBox[{"2", "\[Lambda]", " ", "y"}]}], ",", "\[IndentingNewLine]", 
+         
+         RowBox[{
+          RowBox[{"x", " ", "y"}], " ", "\[Equal]", "\[Gamma]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           SuperscriptBox["x", "2"], "+", 
+           SuperscriptBox["y", "2"]}], "\[Equal]", "1"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"x", "+", "z"}], "\[Equal]", "1"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y", ",", "z", ",", "\[Lambda]", ",", "\[Gamma]"}], 
+        "}"}]}], "]"}]}], ")"}], "//", "N"}], "//", 
+  "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"x", ",", "y", ",", "z"}], "]"}], "/.", "soln"}], "//", "N"}], "//",
+   "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Max", "[", 
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"x", ",", "y", ",", "z"}], "]"}], "/.", "soln"}], "]"}], "//", 
+  "N"}]}], "Input",
+ CellChangeTimes->{{3.7283053514593067`*^9, 3.728305469983613*^9}, {
+  3.728305513355934*^9, 3.7283055598087597`*^9}, {3.728305709392734*^9, 
+  3.7283057224047832`*^9}, {3.728305936622847*^9, 3.728305977557068*^9}, {
+  3.728306060485731*^9, 3.728306160969348*^9}, {3.728306368800847*^9, 
+  3.7283065039391003`*^9}, {3.728306546276524*^9, 
+  3.72830655167883*^9}},ExpressionUUID->"38206cd3-7f6e-490a-86d7-\
+57fdd674ec35"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{"x", "\[Rule]", "1.`"}], 
+      RowBox[{"y", "\[Rule]", "0.`"}], 
+      RowBox[{"z", "\[Rule]", "0.`"}], 
+      RowBox[{"\[Lambda]", "\[Rule]", "0.`"}], 
+      RowBox[{"\[Gamma]", "\[Rule]", "0.`"}]},
+     {
+      RowBox[{"x", "\[Rule]", 
+       RowBox[{"-", "0.7675918792439982`"}]}], 
+      RowBox[{"y", "\[Rule]", 
+       RowBox[{"-", "0.6409389260441803`"}]}], 
+      RowBox[{"z", "\[Rule]", "1.7675918792439982`"}], 
+      RowBox[{"\[Lambda]", "\[Rule]", "1.0584387351064137`"}], 
+      RowBox[{"\[Gamma]", "\[Rule]", "0.49197951472288237`"}]},
+     {
+      RowBox[{"x", "\[Rule]", 
+       RowBox[{"-", "0.7675918792439982`"}]}], 
+      RowBox[{"y", "\[Rule]", "0.6409389260441803`"}], 
+      RowBox[{"z", "\[Rule]", "1.7675918792439982`"}], 
+      RowBox[{"\[Lambda]", "\[Rule]", 
+       RowBox[{"-", "1.0584387351064137`"}]}], 
+      RowBox[{"\[Gamma]", "\[Rule]", 
+       RowBox[{"-", "0.49197951472288237`"}]}]},
+     {
+      RowBox[{"x", "\[Rule]", "0.4342585459106648`"}], 
+      RowBox[{"y", "\[Rule]", 
+       RowBox[{"-", "0.9007882744038995`"}]}], 
+      RowBox[{"z", "\[Rule]", "0.5657414540893352`"}], 
+      RowBox[{"\[Lambda]", "\[Rule]", 
+       RowBox[{"-", "0.13636837212207176`"}]}], 
+      RowBox[{"\[Gamma]", "\[Rule]", 
+       RowBox[{"-", "0.39117500621601436`"}]}]},
+     {
+      RowBox[{"x", "\[Rule]", "0.4342585459106648`"}], 
+      RowBox[{"y", "\[Rule]", "0.9007882744038995`"}], 
+      RowBox[{"z", "\[Rule]", "0.5657414540893352`"}], 
+      RowBox[{"\[Lambda]", "\[Rule]", "0.13636837212207176`"}], 
+      RowBox[{"\[Gamma]", "\[Rule]", "0.39117500621601436`"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.728305470584422*^9, {3.72830552170055*^9, 3.728305560069227*^9}, {
+   3.72830570973822*^9, 3.728305722711193*^9}, {3.728305939166163*^9, 
+   3.7283059778836317`*^9}, {3.7283060968816557`*^9, 3.728306161276846*^9}, {
+   3.7283063741784687`*^9, 3.728306456132492*^9}, {3.728306497682118*^9, 
+   3.7283065042268476`*^9}, {3.728306548019508*^9, 
+   3.728306552131103*^9}},ExpressionUUID->"b373eb84-22ee-4905-abe3-\
+5c1b26b8abc7"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", 
+   TagBox[GridBox[{
+      {"0.`"},
+      {"0.8696189949785699`"},
+      {
+       RowBox[{"-", "0.8696189949785699`"}]},
+      {
+       RowBox[{"-", "0.22130391682005268`"}]},
+      {"0.22130391682005268`"}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}},
+        "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.5599999999999999]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    Column], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.728305470584422*^9, {3.72830552170055*^9, 3.728305560069227*^9}, {
+   3.72830570973822*^9, 3.728305722711193*^9}, {3.728305939166163*^9, 
+   3.7283059778836317`*^9}, {3.7283060968816557`*^9, 3.728306161276846*^9}, {
+   3.7283063741784687`*^9, 3.728306456132492*^9}, {3.728306497682118*^9, 
+   3.7283065042268476`*^9}, {3.728306548019508*^9, 
+   3.728306552132815*^9}},ExpressionUUID->"07ef0204-b3e4-4a28-91f8-\
+0bdebe54cd77"],
+
+Cell[BoxData["0.8696189949785699`"], "Output",
+ CellChangeTimes->{
+  3.728305470584422*^9, {3.72830552170055*^9, 3.728305560069227*^9}, {
+   3.72830570973822*^9, 3.728305722711193*^9}, {3.728305939166163*^9, 
+   3.7283059778836317`*^9}, {3.7283060968816557`*^9, 3.728306161276846*^9}, {
+   3.7283063741784687`*^9, 3.728306456132492*^9}, {3.728306497682118*^9, 
+   3.7283065042268476`*^9}, {3.728306548019508*^9, 
+   3.72830655213387*^9}},ExpressionUUID->"8b8acccb-803a-45bc-96b0-\
+57d7e36e1d31"]
+}, Open  ]]
+},
+WindowSize->{1878, 1016},
+WindowMargins->{{21, Automatic}, {21, Automatic}},
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic},
+PrintingOptions->{"PaperOrientation"->"Portrait",
+"PaperSize"->{Automatic, Automatic},
+"PostScriptOutputFile"->"/home/cajacobs/print.pdf"},
+FrontEndVersion->"11.2 for Linux x86 (64-bit) (September 10, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 2049, 55, 233, "Input",ExpressionUUID->"38206cd3-7f6e-490a-86d7-57fdd674ec35"],
+Cell[2632, 79, 2621, 61, 117, "Output",ExpressionUUID->"b373eb84-22ee-4905-abe3-5c1b26b8abc7"],
+Cell[5256, 142, 1238, 32, 150, "Output",ExpressionUUID->"07ef0204-b3e4-4a28-91f8-0bdebe54cd77"],
+Cell[6497, 176, 495, 8, 35, "Output",ExpressionUUID->"8b8acccb-803a-45bc-96b0-57d7e36e1d31"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
