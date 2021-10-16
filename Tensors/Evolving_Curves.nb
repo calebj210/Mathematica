@@ -1,0 +1,521 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17656,        513]
+NotebookOptionsPosition[     17025,        494]
+NotebookOutlinePosition[     17469,        511]
+CellTagsIndexPosition[     17426,        508]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"ParametricPlot", "[", 
+    RowBox[{
+     RowBox[{"r", "[", 
+      RowBox[{"s", ",", "t"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"s", ",", "0", ",", 
+       RowBox[{"2", "\[Pi]"}]}], "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.842114303564899*^9, 3.842114513707652*^9}, {
+  3.842114559705551*^9, 3.842114569564013*^9}, {3.842114687675152*^9, 
+  3.842114770584898*^9}, {3.842114849910191*^9, 3.8421148703714123`*^9}, {
+  3.842115775359127*^9, 3.84211577640219*^9}, {3.8421158074367123`*^9, 
+  3.842115814891959*^9}, {3.842116082154497*^9, 3.84211608247548*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"e9c8a102-bd06-4ef6-9fb2-1e4baab59112"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = 0., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], 0, 1}}, Typeset`size$$ = {
+    360., {178., 181.99997386848196`}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = 0}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ParametricPlot[
+        $CellContext`r[$CellContext`s, $CellContext`t$$], {$CellContext`s, 0, 
+         2 Pi}], "Specifications" :> {{$CellContext`t$$, 0, 1}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{407., {221.6875, 227.3125}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.842115815474277*^9, 3.842115951428006*^9, 
+  3.842116027073884*^9, 3.842116082977425*^9, 3.842116174732155*^9},
+ CellLabel->"Out[20]=",ExpressionUUID->"00eeab85-e98d-4edf-9c75-1f7dc05abad4"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"r\[Pi]", "[", "\[FormalT]_", "]"}], "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       FractionBox["17", "31"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["235", "57"], "-", 
+         RowBox[{"32", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["19", "17"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["192", "55"], "-", 
+         RowBox[{"30", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["47", "32"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["69", "25"], "-", 
+         RowBox[{"29", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["35", "26"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["75", "34"], "-", 
+         RowBox[{"27", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["6", "31"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["23", "10"], "-", 
+         RowBox[{"26", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["35", "43"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["10", "33"], "-", 
+         RowBox[{"25", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["126", "43"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["421", "158"], "-", 
+         RowBox[{"24", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["143", "57"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["35", "22"], "-", 
+         RowBox[{"22", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["106", "27"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["84", "29"], "-", 
+         RowBox[{"21", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["88", "25"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["23", "27"], "-", 
+         RowBox[{"20", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["74", "27"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["53", "22"], "-", 
+         RowBox[{"19", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["44", "53"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["117", "25"], "-", 
+         RowBox[{"18", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["126", "25"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["88", "49"], "-", 
+         RowBox[{"17", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["79", "11"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["43", "26"], "-", 
+         RowBox[{"16", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["43", "12"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["41", "17"], "-", 
+         RowBox[{"15", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["47", "27"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["244", "81"], "-", 
+         RowBox[{"14", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["8", "5"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["79", "19"], "-", 
+         RowBox[{"13", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["373", "46"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["109", "38"], "-", 
+         RowBox[{"12", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["1200", "31"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["133", "74"], "-", 
+         RowBox[{"11", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["67", "24"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["157", "61"], "-", 
+         RowBox[{"10", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["583", "28"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["13", "8"], "-", 
+         RowBox[{"8", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["772", "35"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["59", "16"], "-", 
+         RowBox[{"7", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["3705", "46"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["117", "50"], "-", 
+         RowBox[{"6", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["862", "13"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["19", "8"], "-", 
+         RowBox[{"5", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["6555", "34"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["157", "78"], "-", 
+         RowBox[{"3", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["6949", "13"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["83", "27"], "-", "\[FormalT]"}], "]"}]}], "-", 
+      RowBox[{
+       FractionBox["6805", "54"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["1", "145"], "+", 
+         RowBox[{"2", " ", "\[FormalT]"}]}], "]"}]}], "-", 
+      RowBox[{
+       FractionBox["5207", "37"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["49", "74"], "+", 
+         RowBox[{"4", " ", "\[FormalT]"}]}], "]"}]}], "-", 
+      RowBox[{
+       FractionBox["1811", "58"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["55", "43"], "+", 
+         RowBox[{"9", " ", "\[FormalT]"}]}], "]"}]}], "-", 
+      RowBox[{
+       FractionBox["63", "20"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["2", "23"], "+", 
+         RowBox[{"23", " ", "\[FormalT]"}]}], "]"}]}], "-", 
+      RowBox[{
+       FractionBox["266", "177"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["13", "18"], "+", 
+         RowBox[{"28", " ", "\[FormalT]"}]}], "]"}]}], "-", 
+      RowBox[{
+       FractionBox["2", "21"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["7", "16"], "+", 
+         RowBox[{"31", " ", "\[FormalT]"}]}], "]"}]}]}], ",", 
+     RowBox[{
+      RowBox[{
+       FractionBox["70", "37"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["65", "32"], "-", 
+         RowBox[{"32", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["11", "12"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["98", "41"], "-", 
+         RowBox[{"31", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["26", "29"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["35", "12"], "-", 
+         RowBox[{"30", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["54", "41"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["18", "7"], "-", 
+         RowBox[{"29", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["177", "71"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["51", "19"], "-", 
+         RowBox[{"27", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["59", "34"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["125", "33"], "-", 
+         RowBox[{"26", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["49", "29"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["18", "11"], "-", 
+         RowBox[{"25", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["151", "75"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["59", "22"], "-", 
+         RowBox[{"24", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["52", "9"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["118", "45"], "-", 
+         RowBox[{"22", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["52", "33"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["133", "52"], "-", 
+         RowBox[{"21", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["37", "45"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["61", "14"], "-", 
+         RowBox[{"20", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["143", "46"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["144", "41"], "-", 
+         RowBox[{"19", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["254", "47"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["19", "52"], "-", 
+         RowBox[{"18", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["246", "35"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["92", "25"], "-", 
+         RowBox[{"17", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["722", "111"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["176", "67"], "-", 
+         RowBox[{"16", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["136", "23"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["3", "19"], "-", 
+         RowBox[{"15", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["273", "25"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["32", "21"], "-", 
+         RowBox[{"13", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["229", "33"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["117", "28"], "-", 
+         RowBox[{"12", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["19", "4"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["43", "11"], "-", 
+         RowBox[{"11", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["135", "8"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["23", "10"], "-", 
+         RowBox[{"10", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["205", "6"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["33", "23"], "-", 
+         RowBox[{"8", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["679", "45"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["55", "12"], "-", 
+         RowBox[{"7", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["101", "8"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["11", "12"], "-", 
+         RowBox[{"6", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["2760", "59"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["40", "11"], "-", 
+         RowBox[{"5", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["1207", "18"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["21", "23"], "-", 
+         RowBox[{"4", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["8566", "27"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["39", "28"], "-", 
+         RowBox[{"3", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["12334", "29"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["47", "37"], "-", 
+         RowBox[{"2", " ", "\[FormalT]"}]}], "]"}]}], "+", 
+      RowBox[{
+       FractionBox["15410", "39"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["185", "41"], "-", "\[FormalT]"}], "]"}]}], "-", 
+      RowBox[{
+       FractionBox["596", "17"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["3", "26"], "+", 
+         RowBox[{"9", " ", "\[FormalT]"}]}], "]"}]}], "-", 
+      RowBox[{
+       FractionBox["247", "28"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["25", "21"], "+", 
+         RowBox[{"14", " ", "\[FormalT]"}]}], "]"}]}], "-", 
+      RowBox[{
+       FractionBox["458", "131"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["21", "37"], "+", 
+         RowBox[{"23", " ", "\[FormalT]"}]}], "]"}]}], "-", 
+      RowBox[{
+       FractionBox["41", "36"], " ", 
+       RowBox[{"Sin", "[", 
+        RowBox[{
+         FractionBox["7", "8"], "+", 
+         RowBox[{"28", " ", "\[FormalT]"}]}], "]"}]}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"r", "[", 
+    RowBox[{"s_", ",", "t_"}], "]"}], "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Cos", "[", "s", "]"}], ",", 
+       RowBox[{"Sin", "[", "s", "]"}]}], "}"}], 
+     RowBox[{"(", 
+      RowBox[{"1", "-", "t"}], ")"}]}], "+", 
+    FractionBox[
+     RowBox[{"(", 
+      RowBox[{"t", " ", 
+       RowBox[{"r\[Pi]", "[", "s", "]"}]}], ")"}], "700"]}]}], ";"}]}], \
+"Input",
+ CellChangeTimes->{{3.842115212487021*^9, 3.842115220005125*^9}, {
+   3.842115292032495*^9, 3.842115309251255*^9}, {3.842115347431568*^9, 
+   3.842115374612184*^9}, {3.842115706021555*^9, 3.8421157199133244`*^9}, {
+   3.842115750092761*^9, 3.8421157873425913`*^9}, {3.842115943062407*^9, 
+   3.842115943327921*^9}, {3.84211602020956*^9, 3.8421161242701397`*^9}, {
+   3.842116171100685*^9, 3.8421162040510073`*^9}, 3.842116623311542*^9},
+ CellLabel->"In[29]:=",ExpressionUUID->"b06ee8ab-ee96-44c8-bda2-08806f24afeb"]
+},
+WindowSize->{1416., 763.5},
+WindowMargins->{{12, Automatic}, {12, Automatic}},
+TaggingRules->Association["TryRealOnly" -> False],
+FrontEndVersion->"12.3 for Linux x86 (64-bit) (July 9, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"73214300-4c6a-44e4-8bf0-97541fbc2960"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 818, 17, 51, "Input",ExpressionUUID->"e9c8a102-bd06-4ef6-9fb2-1e4baab59112"],
+Cell[1401, 41, 1738, 34, 468, "Output",ExpressionUUID->"00eeab85-e98d-4edf-9c75-1f7dc05abad4"]
+}, Open  ]],
+Cell[3154, 78, 13867, 414, 413, InheritFromParent,ExpressionUUID->"b06ee8ab-ee96-44c8-bda2-08806f24afeb"]
+}
+]
+*)
+
