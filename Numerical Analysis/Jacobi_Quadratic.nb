@@ -1,0 +1,2033 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     71708,       2025]
+NotebookOptionsPosition[     70151,       1995]
+NotebookOutlinePosition[     70615,       2012]
+CellTagsIndexPosition[     70572,       2009]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", "5"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"A", "=", 
+   RowBox[{"Module", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"A", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"O", "[", 
+          RowBox[{"\[Epsilon]", ",", "0"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", "n"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"j", ",", "1", ",", "n"}], "}"}]}], "]"}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"i", "=", "1"}], ",", 
+        RowBox[{"i", "<=", "n"}], ",", 
+        RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"A", "[", 
+          RowBox[{"[", 
+           RowBox[{"i", ",", "i"}], "]"}], "]"}], "=", 
+         RowBox[{"C", "[", "i", "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+      "A"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"J", "[", 
+    RowBox[{"i_", ",", "j_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"J", "=", 
+       RowBox[{"IdentityMatrix", "[", "n", "]"}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"J", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", ",", "i"}], "]"}], "]"}], "=", 
+       RowBox[{
+        RowBox[{"J", "[", 
+         RowBox[{"[", 
+          RowBox[{"j", ",", "j"}], "]"}], "]"}], "=", 
+        RowBox[{"1", "-", 
+         SuperscriptBox[
+          RowBox[{"O", "[", 
+           RowBox[{"\[Epsilon]", ",", "0"}], "]"}], "2"]}]}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"J", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", ",", "j"}], "]"}], "]"}], "=", 
+       RowBox[{
+        RowBox[{"J", "[", 
+         RowBox[{"[", 
+          RowBox[{"j", ",", "i"}], "]"}], "]"}], "=", 
+        RowBox[{"O", "[", 
+         RowBox[{"\[Epsilon]", ",", "0"}], "]"}]}]}], ";", 
+      "\[IndentingNewLine]", "J"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Jays", "=", 
+    RowBox[{"Flatten", "[", 
+     RowBox[{
+      RowBox[{"Table", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"J", "[", 
+         RowBox[{"i", ",", "j"}], "]"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "1", ",", 
+          RowBox[{"n", "-", "1"}]}], "}"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"j", ",", 
+          RowBox[{"i", "+", "1"}], ",", "n"}], "}"}]}], "]"}], ",", "1"}], 
+     "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"B", "=", "A"}], ")"}], "//", 
+  "MatrixForm"}], "\[IndentingNewLine]", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "1"}], ",", 
+   RowBox[{"i", "<=", 
+    RowBox[{"n", "-", "1"}]}], ",", 
+   RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"j", "=", 
+      RowBox[{"i", "+", "1"}]}], ",", 
+     RowBox[{"j", "<=", "n"}], ",", 
+     RowBox[{"j", "++"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"B", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"J", "[", 
+          RowBox[{"i", ",", "j"}], "]"}], "\[Transpose]"}], ".", "B", ".", 
+        RowBox[{"J", "[", 
+         RowBox[{"i", ",", "j"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"B", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", ",", "j"}], "]"}], "]"}], "=", 
+       RowBox[{
+        RowBox[{"B", "[", 
+         RowBox[{"[", 
+          RowBox[{"j", ",", "i"}], "]"}], "]"}], "=", "0"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"B", "//", "MatrixForm"}], "]"}]}]}], "]"}]}], 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.853961630881897*^9, 3.853962043453459*^9}, {
+  3.853962203680141*^9, 3.853962246685656*^9}, {3.853962479145852*^9, 
+  3.853962513238163*^9}, {3.853962632265399*^9, 3.853962633273324*^9}, {
+  3.8539626892498703`*^9, 3.853962689937203*^9}, {3.853963820934808*^9, 
+  3.853963956922564*^9}, {3.853964037391074*^9, 3.853964037671267*^9}, {
+  3.8539640858946877`*^9, 3.8539641078495607`*^9}, {3.853964402033122*^9, 
+  3.8539644022869263`*^9}, {3.8539644824845448`*^9, 3.853964482858975*^9}, {
+  3.853964551819193*^9, 3.853964552437875*^9}, {3.8539751723140306`*^9, 
+  3.853975172617022*^9}},
+ CellLabel->
+  "In[127]:=",ExpressionUUID->"3b024d65-1982-4be2-9d61-bc9a9c9c4d8f"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      TemplateBox[{"1"},
+       "C"], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      TemplateBox[{"2"},
+       "C"], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      TemplateBox[{"3"},
+       "C"], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      TemplateBox[{"4"},
+       "C"], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      TemplateBox[{"5"},
+       "C"]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.853961855456818*^9, 3.853961871165156*^9}, {
+   3.85396203133936*^9, 3.853962043847294*^9}, 3.8539622591964493`*^9, {
+   3.853962480048408*^9, 3.8539625139459*^9}, 3.853962634279669*^9, 
+   3.853962690676113*^9, {3.853963929296953*^9, 3.853963957315431*^9}, 
+   3.853964037976725*^9, {3.853964087122814*^9, 3.8539641085589848`*^9}, 
+   3.853964402624975*^9, 3.853964483201048*^9, 3.85396455278059*^9, 
+   3.853975172920144*^9},
+ CellLabel->
+  "Out[131]//MatrixForm=",ExpressionUUID->"d90e5c5e-e5e9-40cb-ae3a-\
+ab0970d62521"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"1"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[1]}, 0, 2, 1],
+       Editable->False], "0", 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {"0", 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"2"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[2]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      TemplateBox[{"3"},
+       "C"], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      TemplateBox[{"4"},
+       "C"], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      TemplateBox[{"5"},
+       "C"]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Print",
+ CellChangeTimes->{{3.853962031342896*^9, 3.8539620438492393`*^9}, 
+   3.8539622592052593`*^9, {3.8539624800508013`*^9, 3.853962513947891*^9}, 
+   3.853962634284329*^9, 3.8539626906786013`*^9, {3.853963929300042*^9, 
+   3.853963957318123*^9}, 3.853964037978159*^9, {3.853964087124762*^9, 
+   3.8539641085626793`*^9}, 3.8539644026264553`*^9, 3.853964483210495*^9, 
+   3.853964552783681*^9, 3.853975172925282*^9},
+ CellLabel->
+  "During evaluation of \
+In[127]:=",ExpressionUUID->"0db6cb55-3cee-4b61-bfa2-d292cdefe7a0"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"1"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[1]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], "0", 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"2"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[2]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {"0", 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"3"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[3]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      TemplateBox[{"4"},
+       "C"], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      TemplateBox[{"5"},
+       "C"]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Print",
+ CellChangeTimes->{{3.853962031342896*^9, 3.8539620438492393`*^9}, 
+   3.8539622592052593`*^9, {3.8539624800508013`*^9, 3.853962513947891*^9}, 
+   3.853962634284329*^9, 3.8539626906786013`*^9, {3.853963929300042*^9, 
+   3.853963957318123*^9}, 3.853964037978159*^9, {3.853964087124762*^9, 
+   3.8539641085626793`*^9}, 3.8539644026264553`*^9, 3.853964483210495*^9, 
+   3.853964552783681*^9, 3.853975172929185*^9},
+ CellLabel->
+  "During evaluation of \
+In[127]:=",ExpressionUUID->"3fa0b88f-679a-4237-9478-be37f92371d4"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"1"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[1]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], "0", 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"2"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[2]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"3"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[3]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {"0", 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"4"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[4]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      TemplateBox[{"5"},
+       "C"]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Print",
+ CellChangeTimes->{{3.853962031342896*^9, 3.8539620438492393`*^9}, 
+   3.8539622592052593`*^9, {3.8539624800508013`*^9, 3.853962513947891*^9}, 
+   3.853962634284329*^9, 3.8539626906786013`*^9, {3.853963929300042*^9, 
+   3.853963957318123*^9}, 3.853964037978159*^9, {3.853964087124762*^9, 
+   3.8539641085626793`*^9}, 3.8539644026264553`*^9, 3.853964483210495*^9, 
+   3.853964552783681*^9, 3.853975172934093*^9},
+ CellLabel->
+  "During evaluation of \
+In[127]:=",ExpressionUUID->"723415f3-3909-4942-8de9-764a0908f7fb"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"1"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[1]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], "0"},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"2"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[2]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"3"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[3]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"4"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[4]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {"0", 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"5"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[5]}, 0, 2, 1],
+       Editable->False]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Print",
+ CellChangeTimes->{{3.853962031342896*^9, 3.8539620438492393`*^9}, 
+   3.8539622592052593`*^9, {3.8539624800508013`*^9, 3.853962513947891*^9}, 
+   3.853962634284329*^9, 3.8539626906786013`*^9, {3.853963929300042*^9, 
+   3.853963957318123*^9}, 3.853964037978159*^9, {3.853964087124762*^9, 
+   3.8539641085626793`*^9}, 3.8539644026264553`*^9, 3.853964483210495*^9, 
+   3.853964552783681*^9, 3.853975172937956*^9},
+ CellLabel->
+  "During evaluation of \
+In[127]:=",ExpressionUUID->"46c90eb0-2e54-4abe-9153-ecf7a176eb49"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"1"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[1]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], "0"},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"2"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[2]}, 0, 2, 1],
+       Editable->False], "0", 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], "0", 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"3"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[3]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"4"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[4]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {"0", 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"5"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[5]}, 0, 2, 1],
+       Editable->False]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Print",
+ CellChangeTimes->{{3.853962031342896*^9, 3.8539620438492393`*^9}, 
+   3.8539622592052593`*^9, {3.8539624800508013`*^9, 3.853962513947891*^9}, 
+   3.853962634284329*^9, 3.8539626906786013`*^9, {3.853963929300042*^9, 
+   3.853963957318123*^9}, 3.853964037978159*^9, {3.853964087124762*^9, 
+   3.8539641085626793`*^9}, 3.8539644026264553`*^9, 3.853964483210495*^9, 
+   3.853964552783681*^9, 3.853975172941793*^9},
+ CellLabel->
+  "During evaluation of \
+In[127]:=",ExpressionUUID->"2ab21972-82a9-42f5-8f55-96255be9d656"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"1"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[1]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], "0"},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"2"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[2]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], "0", 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"3"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[3]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], "0", 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"4"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[4]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {"0", 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"5"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[5]}, 0, 2, 1],
+       Editable->False]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Print",
+ CellChangeTimes->{{3.853962031342896*^9, 3.8539620438492393`*^9}, 
+   3.8539622592052593`*^9, {3.8539624800508013`*^9, 3.853962513947891*^9}, 
+   3.853962634284329*^9, 3.8539626906786013`*^9, {3.853963929300042*^9, 
+   3.853963957318123*^9}, 3.853964037978159*^9, {3.853964087124762*^9, 
+   3.8539641085626793`*^9}, 3.8539644026264553`*^9, 3.853964483210495*^9, 
+   3.853964552783681*^9, 3.8539751729455853`*^9},
+ CellLabel->
+  "During evaluation of \
+In[127]:=",ExpressionUUID->"7ed47930-6284-4ac8-ba5a-b9a19ab3b085"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"1"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[1]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "3"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 3, 3, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"2"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[2]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], "0"},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"3"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[3]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"4"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[4]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "3"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 3, 3, 1],
+       Editable->False], "0", 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"5"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[5]}, 0, 2, 1],
+       Editable->False]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Print",
+ CellChangeTimes->{{3.853962031342896*^9, 3.8539620438492393`*^9}, 
+   3.8539622592052593`*^9, {3.8539624800508013`*^9, 3.853962513947891*^9}, 
+   3.853962634284329*^9, 3.8539626906786013`*^9, {3.853963929300042*^9, 
+   3.853963957318123*^9}, 3.853964037978159*^9, {3.853964087124762*^9, 
+   3.8539641085626793`*^9}, 3.8539644026264553`*^9, 3.853964483210495*^9, 
+   3.853964552783681*^9, 3.8539751729493856`*^9},
+ CellLabel->
+  "During evaluation of \
+In[127]:=",ExpressionUUID->"57a3bf7c-df9d-4638-bd45-44443cdab58c"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"1"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[1]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "3"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 3, 3, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"2"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[2]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], "0"},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"3"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[3]}, 0, 2, 1],
+       Editable->False], "0", 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], "0", 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"4"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[4]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "3"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 3, 3, 1],
+       Editable->False], "0", 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"5"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[5]}, 0, 2, 1],
+       Editable->False]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Print",
+ CellChangeTimes->{{3.853962031342896*^9, 3.8539620438492393`*^9}, 
+   3.8539622592052593`*^9, {3.8539624800508013`*^9, 3.853962513947891*^9}, 
+   3.853962634284329*^9, 3.8539626906786013`*^9, {3.853963929300042*^9, 
+   3.853963957318123*^9}, 3.853964037978159*^9, {3.853964087124762*^9, 
+   3.8539641085626793`*^9}, 3.8539644026264553`*^9, 3.853964483210495*^9, 
+   3.853964552783681*^9, 3.853975172953209*^9},
+ CellLabel->
+  "During evaluation of \
+In[127]:=",ExpressionUUID->"c435cd55-862e-4481-9d7b-4b17cef62648"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"1"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[1]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "3"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 3, 3, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"2"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[2]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "3"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 3, 3, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"3"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[3]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], "0"},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"4"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[4]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "3"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 3, 3, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "3"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 3, 3, 1],
+       Editable->False], "0", 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "1"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 1, 1, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"5"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[5]}, 0, 2, 1],
+       Editable->False]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Print",
+ CellChangeTimes->{{3.853962031342896*^9, 3.8539620438492393`*^9}, 
+   3.8539622592052593`*^9, {3.8539624800508013`*^9, 3.853962513947891*^9}, 
+   3.853962634284329*^9, 3.8539626906786013`*^9, {3.853963929300042*^9, 
+   3.853963957318123*^9}, 3.853964037978159*^9, {3.853964087124762*^9, 
+   3.8539641085626793`*^9}, 3.8539644026264553`*^9, 3.853964483210495*^9, 
+   3.853964552783681*^9, 3.853975172956856*^9},
+ CellLabel->
+  "During evaluation of \
+In[127]:=",ExpressionUUID->"7c49311d-11fe-467e-a16a-277ab44ff359"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"1"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[1]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "3"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 3, 3, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"2"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[2]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "3"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 3, 3, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"3"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[3]}, 0, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "3"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 3, 3, 1],
+       Editable->False]},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 2, 2, 1],
+       Editable->False], 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"4"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[4]}, 0, 2, 1],
+       Editable->False], "0"},
+     {
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "3"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 3, 3, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "3"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 3, 3, 1],
+       Editable->False], 
+      InterpretationBox[
+       SuperscriptBox[
+        RowBox[{"O", "[", "\[Epsilon]", "]"}], "3"],
+       SeriesData[$CellContext`\[Epsilon], 0, {}, 3, 3, 1],
+       Editable->False], "0", 
+      InterpretationBox[
+       RowBox[{
+        TemplateBox[{"5"},
+         "C"], "+", 
+        InterpretationBox[
+         SuperscriptBox[
+          RowBox[{"O", "[", "\[Epsilon]", "]"}], "2"],
+         SeriesData[$CellContext`\[Epsilon], 0, {}, 0, 2, 1],
+         Editable->False]}],
+       SeriesData[$CellContext`\[Epsilon], 0, {
+         C[5]}, 0, 2, 1],
+       Editable->False]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Print",
+ CellChangeTimes->{{3.853962031342896*^9, 3.8539620438492393`*^9}, 
+   3.8539622592052593`*^9, {3.8539624800508013`*^9, 3.853962513947891*^9}, 
+   3.853962634284329*^9, 3.8539626906786013`*^9, {3.853963929300042*^9, 
+   3.853963957318123*^9}, 3.853964037978159*^9, {3.853964087124762*^9, 
+   3.8539641085626793`*^9}, 3.8539644026264553`*^9, 3.853964483210495*^9, 
+   3.853964552783681*^9, 3.853975172959903*^9},
+ CellLabel->
+  "During evaluation of \
+In[127]:=",ExpressionUUID->"b952105c-2614-44c1-963e-fc10b00f36a1"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1685.3333333333333`, 918.6666666666666},
+WindowMargins->{{10.666666666666666`, Automatic}, {10.766355140186988`, 
+  30.95327102803738}},
+FrontEndVersion->"12.3 for Linux x86 (64-bit) (July 9, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"8dc93bb8-30d6-43b7-827e-f28906a1b20a"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 4589, 127, 492, "Input",ExpressionUUID->"3b024d65-1982-4be2-9d61-bc9a9c9c4d8f"],
+Cell[5172, 151, 4965, 138, 123, "Output",ExpressionUUID->"d90e5c5e-e5e9-40cb-ae3a-ab0970d62521"],
+Cell[CellGroupData[{
+Cell[10162, 293, 5267, 147, 99, "Print",ExpressionUUID->"0db6cb55-3cee-4b61-bfa2-d292cdefe7a0"],
+Cell[15432, 442, 5615, 157, 99, "Print",ExpressionUUID->"3fa0b88f-679a-4237-9478-be37f92371d4"],
+Cell[21050, 601, 5963, 167, 99, "Print",ExpressionUUID->"723415f3-3909-4942-8de9-764a0908f7fb"],
+Cell[27016, 770, 6311, 177, 99, "Print",ExpressionUUID->"46c90eb0-2e54-4abe-9153-ecf7a176eb49"],
+Cell[33330, 949, 5947, 167, 99, "Print",ExpressionUUID->"2ab21972-82a9-42f5-8f55-96255be9d656"],
+Cell[39280, 1118, 5949, 167, 99, "Print",ExpressionUUID->"7ed47930-6284-4ac8-ba5a-b9a19ab3b085"],
+Cell[45232, 1287, 6313, 177, 99, "Print",ExpressionUUID->"57a3bf7c-df9d-4638-bd45-44443cdab58c"],
+Cell[51548, 1466, 5947, 167, 99, "Print",ExpressionUUID->"c435cd55-862e-4481-9d7b-4b17cef62648"],
+Cell[57498, 1635, 6311, 177, 99, "Print",ExpressionUUID->"7c49311d-11fe-467e-a16a-277ab44ff359"],
+Cell[63812, 1814, 6311, 177, 99, "Print",ExpressionUUID->"b952105c-2614-44c1-963e-fc10b00f36a1"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
